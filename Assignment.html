@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GASORE NSHUTI Moise's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #020208;
+            color: #ddd;
+            display:block;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header .truncate{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        .reveal {
+            position: relative;
+            font-size: 40px;
+            color:transparent;
+            cursor:pointer;
+            text-align: center;
+        
+        }
+        .reveal::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 75%;
+            color: #fff;
+            overflow: hidden;
+            transition: 1s;
+            
+        }
+        .reveal.right-to-left::before {
+            right: -100%;
+            top: 0;
+        }
+        .reveal.right-to-left:hover::before {
+            right: 0;
+        }
+        .reveal:hover::before {
+            width: 0;
+            direction: right;
+        }
+        .neon {
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #a3a8a2,
+                0 0 40px rgb(210, 97, 22),
+                0 0 80px rgb(22, 147, 43),
+                0 0 90px rgb(72, 20, 157),
+                0 0 100px rgb(114, 18, 69),
+                0 0 150px rgb(136, 72, 72);
+        }
+        .profile-img-container{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .profile-img-container:hover{
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .profile-img {
+            display: block;
+            width: 175px;
+            height: 200px;
+            object-fit: cover;
+            transition: all 1s ease;
+            margin: 35px auto;
+            border-radius: 50%;
+            
+        }
+        .profile-img-container:hover .profile-img{
+            transform: scale(1.5);
+        }
+        .profile-img:hover{
+            transform: scale(1.1);
+        }
+        .img-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+        .profile-img-container:hover .img-overlay{
+            opacity: 4;
+        }
+        .section {
+            background:#35424a;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        table {
+            width: 100%;
+            border: none;
+            border-collapse:collapse;
+            border-spacing: 0;
+            border-radius: 18px;
+            overflow:hidden;
+            box-shadow: 10 10 20px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border:none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-transform: uppercase;
+            font-weight: bold;
+            
+        }
+
+        tbody tr:hover{
+            background-color: #0e0d0e;
+        }
+        tbody td{
+            position: relative;
+        }
+        tbody td:hover::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #35424a;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .hobby-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .hobby-images img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kodak's Portfolio</h1>
+        </div>
+    </header>
+
+    <div class="container" >
+        <div class=".profile-img-container" >
+            <img src="D:\Kodak\IMG-20231209-WA0003.jpg" alt="Student Profile Picture" class="profile-img">
+            <h2>About Kodak</h2>
+            <p>Hello! I'm a passionate student pursuing [Your Degree] at [Your University]. I'm dedicated to learning and growing in my field, with a particular interest in [Your Interests].</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <table>
+                <tr>
+                    <th style="background-color: #0e0d0e;border: none; " >Skill</th>
+                    <th style="background-color: #0e0d0e;border: none;">Level of Expertise</th>
+                </tr>
+                <tr>
+                    <td style="border: none;">Web Development</td>
+                    <td style="border: none;">Advanced</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">Graphic Design</td>
+                    <td style="border: none;">Intermediate</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">Data Analysis</td>
+                    <td style="border: none;">Beginner</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">Project Management</td>
+                    <td style="border: none;">Intermediate</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" class ="effect" >
+            <div class="reveal right-to-left"  data-text="Work Experience"  style="display: flex;align-items: center;height: 45px;font-size: 25px; background-color: rgb(0, 0, 0);text-align:end;"><h2 >Work Experience</h2></div>
+            
+            <h3>Intern at Tech Solutions Inc.</h3>
+            <p>Summer 2023</p>
+            <ul>
+                <li>Assisted in developing web applications</li>
+                <li>Collaborated with the design team on UI/UX projects</li>
+                <li>Participated in weekly team meetings and brainstorming sessions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="neon"><h2>Hobbies</h2></div>
+            <p>I'm passionate about photography, playing guitar, and hiking. Here are some images that showcase my hobbies:</p>
+            <div class="hobby-images">
+                <img src="/api/placeholder/200/150" alt="Photography Hobby">
+                <img src="/api/placeholder/200/150" alt="Guitar Playing">
+                <img src="/api/placeholder/200/150" alt="Hiking">
+            </div>
+            
+            <h3>My Favorite Song</h3>
+            <audio controls>
+                <source src="C:\Users\user\OneDrive\Desktop\Assignment\02-Kendrick-Lamar-N95-(HipHopKit.com).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>My Hiking Adventure</h3>
+            <video width="100%" controls>
+                <source src="/api/placeholder/640/360" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/gn._moise/">Instagram</a>
+            <a href="https://www.twitter.com/yourusername">Twitter</a>
+        </div>
+    </div>
+</body>
+</html>
